@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="containerLogin">
+        <p class="titleEnter">Entrar</p>
+        <div class="example-container email">
+            <mat-form-field appearance="fill" class="form">
+              <mat-label class="labelEmail">Entre com seu email</mat-label>
+              <input matInput placeholder="pat@example.com" [formControl]="email" required class="labelEmail">
+              <mat-error *ngIf="email.invalid" class="labelEmailError">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+
+        </div>
+        <div class="password">
+            <mat-form-field appearance="fill" class="form">
+                <mat-label class="labelEmail">Entre com sua senha</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'" class="labelEmail">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+              </mat-form-field>
+        </div>
+        <div class="divSend">
+            <button mat-raised-button class="btnSend">
+                Entrar
+            </button>
+        </div>
+     
+    
+    </div>
+
+    
+</div>
